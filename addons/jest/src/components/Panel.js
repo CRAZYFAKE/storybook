@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Indicator from './Indicator';
-import provideTests from '../hoc/provideTests';
+import provideJestResult from '../hoc/provideJestResult';
 import colors from '../colors';
 
-const TestsPanel = ({ tests }) => {
+const Panel = ({ tests }) => {
   const style = {
     padding: '10px 20px',
     flex: 1,
@@ -150,7 +150,7 @@ const TestsPanel = ({ tests }) => {
     </div>
   );
 };
-TestsPanel.propTypes = {
+Panel.propTypes = {
   tests: PropTypes.arrayOf(
     PropTypes.shape({
       result: PropTypes.object,
@@ -158,4 +158,4 @@ TestsPanel.propTypes = {
   ).isRequired,
 };
 
-export default provideTests(TestsPanel);
+export default provideJestResult(Panel);

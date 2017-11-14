@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import provideTests from '../hoc/provideTests';
+import provideJestResult from '../hoc/provideJestResult';
 import Indicator from './Indicator';
 import colors from '../colors';
 
-const TestPanelTitle = ({ tests }) => {
+const PanelTitle = ({ tests }) => {
   if (!tests) {
     return (
       <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -26,7 +26,7 @@ const TestPanelTitle = ({ tests }) => {
     </div>
   );
 };
-TestPanelTitle.propTypes = {
+PanelTitle.propTypes = {
   tests: PropTypes.arrayOf(
     PropTypes.shape({
       result: PropTypes.object,
@@ -34,4 +34,4 @@ TestPanelTitle.propTypes = {
   ).isRequired,
 };
 
-export default provideTests(TestPanelTitle);
+export default provideJestResult(PanelTitle);
